@@ -1,0 +1,337 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei UI"
+}
+body{
+    width: 100%;
+
+}
+.header{
+    width: 100%;
+    height: 100px;
+    background: #07cbc9;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.header .logo{
+    padding-top: 24px;
+    padding-left: 20px;
+    float: left;
+}
+.header .nav{
+    float: right;
+    height: 100px;
+    line-height: 100px;
+    padding-right: 50px;
+    color: #ffffff;
+}
+.header .nav li{
+    float: left;
+    padding:0 20px;
+    list-style: none;
+    font-size: 20px;
+}
+.header .nav li:hover{
+    background: #000000;
+    cursor: pointer;
+}
+
+
+
+/*banner*/
+.banner{
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+}
+.banner .bg{
+    width: 100%;
+}
+.banner .bg img{
+    width: 100%;
+    height: auto;
+}
+.banner .bg-layout{
+    background: #000000;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.5;
+    top:-2px;
+}
+.banner .form-banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto auto;
+    width: 45%;
+    height: 50%;
+    z-index: 3;
+    
+}
+
+/*更改placeholder颜色*/
+::-webkit-input-placeholder{
+    color: #CCCCCC;
+}
+.banner .form-banner input,.banner .form-banner textarea{
+    width: 100%;
+    height: 50px;
+    background: none;
+    border: #CCCCCC 1px solid;
+    border-radius: 4px;
+    margin-top: 20px;
+    color: #e6e6e6;
+    text-indent: 8px;
+}
+.banner .form-banner textarea{
+    height: 100px;
+    line-height: 25px;
+}
+.banner .form-banner button{
+    margin: 10px auto;
+    background: none;
+    border: #CCCCCC 1px solid;
+    color:  #CCCCCC;
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+}
+.banner .form-banner input:hover,.banner .form-banner textarea:hover,.banner .form-banner button:hover{
+    border: #07cbc9 1px solid;
+} 
+.banner .form-banner button:hover{
+    background: #07cbc9;
+    cursor: pointer;
+}
+
+/*ABOUT*/
+.about{
+    position: relative;
+}
+.title p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.title hr{
+    color: #07cbc9;
+    border: #07cbc9 2px solid;
+    width: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 8px auto;
+}
+.about .top .about-top-p{
+    margin:30px 0;
+    text-align: center;
+    color: #b6b6b6;
+    font-size: 18px;
+    line-height: 30px;
+}
+.about .middle{
+    position: relative;
+    overflow: hidden;
+}
+.about .middle .about-middle-left{
+    width: 20%;
+    position: absolute;
+    left: 200px;
+    z-index: 20;
+}
+.about .middle .about-middle-left-p1{
+    font-size: 27px;
+    margin:0 40px 30px 30px;
+}
+.about .middle .about-middle-left-p2{
+    width: 100%;
+    border: #CCCCCC 1px solid;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.473);
+}
+.about .middle .about-middle-left-p2 P{
+    width: 100%;
+    line-height: 25px;
+}
+.about .middle .about-middle-left-p2 button{
+    background: #000000; 
+    color: #ffffff;
+    font-size: 18px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    margin-top: 20px;
+
+}
+.about .middle .about-middle-left-p2 button:hover{
+    color: #000000;
+    background: #ffffff;
+    cursor: pointer;
+    border: #000000 1px solid;
+}
+.about .middle .about-middle-middle{
+    width: 40%;
+    float: left;
+    left: 0;
+    right: 0;
+    margin: 0 0 50px 32%;
+    z-index: 1;
+}
+.about .middle .about-middle-middle img{
+    width: 100%;
+}
+.about .middle .about-middle-right{
+    width: 16%;
+    position: absolute;
+    right: 100px;   
+}
+.about .middle .about-middle-right .about-middle-right-box{
+    width: 100%;
+    border: #07cbc9 1px solid;
+    text-align: center;
+    font-size: 27px;
+    margin-bottom: 50px;
+    line-height: 80px;
+}
+.about .middle .about-middle-right .about-middle-right-box hr{
+    color: #07cbc9;
+    border: #07cbc9 1px solid;
+    width: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 8px auto;
+}
+
+.about .bottom{
+    width: 100%;
+    height: 50vw;
+    background-color: #07cbc9;
+    overflow: hidden;
+    border: #000000 1px transparent;
+    margin-bottom: 40px;
+}
+.about .bottom .top{
+    height: 50%;
+    width: 100%;
+}
+.about .bottom .top .box{
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+.about .bottom .box .left{
+    width: 50%;
+    float: left;
+}
+.about .bottom .box img{
+    width: 100%;
+    height: 100%;
+}
+.about .bottom .box .right{
+    padding: 40px;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+}
+.about .bottom .box .p1{
+    color: #ffffff;
+    font-size: 28px;
+}
+.about .bottom .box .p2{
+    color: #ffffff;
+    font-size: 18px;
+}
+.about .bottom .box .p3{
+    color: #ffffff;
+    font-size: 14px;
+}
+.about .bottom .box button{
+    background: #000000; 
+    color: #ffffff;
+    font-size: 18px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.about .bottom .box button:hover{
+    color: #000000;
+    background: #ffffff;
+    cursor: pointer;
+    border: #000000 1px solid;
+}
+.about .bottom .bottom-bottom{
+    height: 50%;
+    width: 100%;
+}
+.about .bottom .bottom-bottom .box{
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.gallery .top .gallery-top-p{
+    margin:30px 0;
+    text-align: center;
+    color: #b6b6b6;
+    font-size: 18px;
+    line-height: 30px;
+}
+.gallery .gallery-bottom{
+    width: 85%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto 40px auto;
+
+}
+.gallery .gallery-bottom .gallery-box{
+    width:33.3333333333333333333333%;
+    position: static;
+    float: left;
+    box-sizing: border-box;
+    border:#ffffff 10px solid;
+    background: #000000;
+}
+.gallery .gallery-bottom .gallery-box p{
+    color: #ffffff;
+    background: #000000;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-indent: 10px;
+}
+.gallery .gallery-bottom .gallery-box img{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.footer{
+    background: #07cbc9;
+    width: 100%;
+    height: 100px;
+}
+.footer .footer-p{
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 100px;
+}
