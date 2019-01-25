@@ -9,9 +9,16 @@
 </head>
 <body>
 	<%
+	//注册后在登录界面不用输入用户名
 		String username = "";
 		if (session.getAttribute("username")!=null){
 			username = (String)session.getAttribute("username");
+		}
+		
+	//登录失败
+		String msg = "";
+		if (request.getAttribute("msg") != null){
+			msg = (String)request.getAttribute("msg");
 		}
 	%>
     <div class="login">
@@ -21,7 +28,8 @@
             </h1>
 
         </div>
-        <form action="" method="post">
+        	<h2 style="color: red"> ${msg} </h2>
+        <form action="/JavaWebHomework1/LoginServlet" method="post">
             <table>
                 <tr>
                     <td class="td1">用户名</td>

@@ -37,12 +37,16 @@ public class LoginServlet extends HttpServlet {
 		for (User user : list) {
 			if (user.getUsername().equals(username)) {
 				if(user.getPassword().equals(password)) {
-					request.setAttribute("user", user);
-					response.sendRedirect(request.getContextPath() + "success.jsp");
+					request.getSession().setAttribute("user", user);
+					response.sendRedirect(request.getContextPath() + "/success.jsp");
 					return;
 				}
 			}
 		}
+		//登录失败
+		request.setAttribute("msg", "用户名或密码错误");
+		request.getRequestDispatcher("/login.jsp").forward(request, response);
+		
 	}
 
 	/**

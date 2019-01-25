@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
+	<%
+	//确保有用户进入
+		if (session.getAttribute("user") != null){
+			User user = (User)session.getAttribute("user");
+	%>
 	<div class="login">
 		<div class="header">
 			<h1>登录成功</h1>
@@ -19,11 +24,19 @@
 					<td align="center"><img src="/reg_login/img/pic01.jpg" /></td>
 				</tr>
 				<tr>
-					<td align="center">欢迎xxx,登录成功！</td>
+					<td align="center">欢迎 ${user.getUsername()} ,登录成功！</td>
 				</tr>
 			</table>
 
 		</div>
 	</div>	
+	<%} else {%>
+	<div class="login">
+		<div class="header">
+			<h2>您还没有登录，请先去<a href="/JavaWebHomework1/login.jsp">登录</a>！</h2>
+
+		</div>
+	</div>	
+	<%} %>
 </body>
 </html>
