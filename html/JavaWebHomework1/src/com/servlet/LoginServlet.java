@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,6 +38,14 @@ public class LoginServlet extends HttpServlet {
 		for (User user : list) {
 			if (user.getUsername().equals(username)) {
 				if(user.getPassword().equals(password)) {
+					//记住用户名
+					if (request.getParameter("remember").equals("true")) {
+						Cookie cookie = new Cookie("username", user.getUsername());
+						cookie.setPath("/JavaWebHomework1");
+						cookie.setMaxAge(60 * 60 * 24);
+						response.addCookie(cookie);
+					}
+					
 					request.getSession().setAttribute("user", user);
 					response.sendRedirect(request.getContextPath() + "/success.jsp");
 					return;

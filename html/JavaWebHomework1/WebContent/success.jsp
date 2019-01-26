@@ -13,6 +13,10 @@
 	//确保有用户进入
 		if (session.getAttribute("user") != null){
 			User user = (User)session.getAttribute("user");
+			System.out.println(user.getPath());
+			int idx = user.getPath().lastIndexOf("\\");
+			//获得唯一文件名
+			String filename = user.getPath().substring(idx + 1);
 	%>
 	<div class="login">
 		<div class="header">
@@ -21,7 +25,7 @@
 		<div class="content">
 			<table align="center">
 				<tr>
-					<td align="center"><img src="/reg_login/img/pic01.jpg" /></td>
+					<td align="center"><img src= "/JavaWebHomework1/Upload/<%=filename %>" /></td>
 				</tr>
 				<tr>
 					<td align="center">欢迎 ${user.getUsername()} ,登录成功！</td>
