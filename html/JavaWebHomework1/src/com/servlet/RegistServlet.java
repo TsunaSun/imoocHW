@@ -120,6 +120,7 @@ public class RegistServlet extends HttpServlet {
 			this.getServletContext().setAttribute("list", userList);
 			//保存注册信息到session
 			request.getSession().setAttribute("username", user.getUsername());
+			request.setAttribute("username", user.getUsername());
 			
 			//重定向到 login.jsp
 			response.sendRedirect(request.getContextPath() + "/login.jsp");

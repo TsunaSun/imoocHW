@@ -1,3 +1,4 @@
+<%@page import="com.utils.CookieUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,10 +10,17 @@
 </head>
 <body>
 	<%
+	String username = "";
+	//
+		Cookie[] cookies = request.getCookies();
+		Cookie cookie = CookieUtils.findCookie(cookies, "username");
+		if (cookie != null){
+			username = cookie.getValue();
+		}
 	//注册后在登录界面不用输入用户名
-		String username = "";
-		if (session.getAttribute("username")!=null){
-			username = (String)session.getAttribute("username");
+
+		if (request.getAttribute("username")!=null){
+			username = (String)request.getAttribute("username");
 		}
 		
 	//登录失败
@@ -20,6 +28,7 @@
 		if (request.getAttribute("msg") != null){
 			msg = (String)request.getAttribute("msg");
 		}
+		
 	%>
     <div class="login">
         <div class="header">
@@ -29,11 +38,11 @@
 
         </div>
         	<h2 style="color: red"> ${msg} </h2>
-        <form action="/JavaWebHomework1/LoginServlet" method="post">
+        <form action="LoginServlet" method="post">
             <table>
                 <tr>
                     <td class="td1">用户名</td>
-                    <td><input type="text" class="input1" name="username" value="${username }"></td>
+                    <td><input type="text" class="input1" name="username" value="<%=username%>"></td>
                 </tr>
                 <tr>
                 <td class="td1">密码</td>
